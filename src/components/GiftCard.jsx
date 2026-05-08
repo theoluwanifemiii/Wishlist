@@ -77,14 +77,6 @@ export default function GiftCard({ gift, claimFor, onClaim }) {
           <p className="option-selected-label">Option {activeIdx + 1} selected</p>
         )}
 
-        {/* People counter */}
-        {(hasImages ? activeCount : totalCount) > 0 && (
-          <p className="gift-claim-count">
-            🤍 {hasImages ? activeCount : totalCount}{' '}
-            {(hasImages ? activeCount : totalCount) === 1 ? 'person is' : 'people are'} getting this
-          </p>
-        )}
-
         <button className="btn-claim" onClick={handleClaim}>
           {gift.btn}
         </button>
