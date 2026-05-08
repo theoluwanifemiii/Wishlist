@@ -41,15 +41,7 @@ export const create = mutation({
     claimerEmail: v.optional(v.string()),
   },
   handler: async (ctx, args) => {
-    // Idempotency — only for non-laptop items (laptop allows multiple contributions)
-    if (args.item !== "laptop") {
-      const existing = await ctx.db
-        .query("claims")
-        .withIndex("by_item", (q) => q.eq("item", args.item))
-        .first();
-      if (existing) return existing._id;
-    }
-
+    // No limit — as many people as want to can claim any gift
     const id = await ctx.db.insert("claims", args);
 
     const isLaptop    = args.item === "laptop";

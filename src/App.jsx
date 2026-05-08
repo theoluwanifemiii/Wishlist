@@ -88,17 +88,16 @@ export default function App() {
     setTimeout(() => setToast(''), 3400);
   }, []);
 
-  // Look up claim for an item
+  // Return how many people have claimed a given item key
   const claimFor = useCallback(
-    (item) => claims.find((c) => c.item === item),
+    (item) => claims.filter((c) => c.item === item).length,
     [claims]
   );
 
-  // Open gift claim modal (guard if already claimed)
+  // Open gift claim modal
   const openModal = useCallback((item, giftName, emoji) => {
-    if (claims.find((c) => c.item === item)) return;
     setModal({ item, giftName, emoji });
-  }, [claims]);
+  }, []);
 
   // Submit a gift claim
   const handleClaim = useCallback(async (item, name, giftName, emoji, anon, claimerEmail) => {

@@ -350,10 +350,10 @@ body {
   background: white; color: var(--crimson); border-color: white;
   transform: scale(1.15);
 }
-.picker-num.claimed {
-  background: var(--gold); border-color: var(--gold); color: white; opacity: 0.85;
+.picker-num.has-claims {
+  background: var(--gold); border-color: var(--gold); color: white;
 }
-.picker-num.claimed.active {
+.picker-num.has-claims.active {
   background: var(--gold-light); border-color: var(--gold-light); color: var(--crimson-deep);
   transform: scale(1.15);
 }
@@ -373,6 +373,12 @@ body {
   transition: opacity 0.2s;
 }
 .gift-whatsapp-link:hover { opacity: 0.75; }
+
+/* Claim count */
+.gift-claim-count {
+  font-size: 0.78rem; color: var(--crimson); font-weight: 500;
+  margin-bottom: 0.6rem;
+}
 
 /* Selected option label */
 .option-selected-label {
