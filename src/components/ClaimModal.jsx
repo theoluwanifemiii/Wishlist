@@ -33,7 +33,7 @@ export default function ClaimModal({ data, onClose, onConfirm }) {
         <h3 className="modal-title">Claim this gift 🎀</h3>
         <p className="modal-sub">
           You're about to claim: <strong>{data?.emoji} {data?.giftName}</strong>
-          <br />Let Temmy know who's gifting her!
+          <br />Let me know who's gifting me!
         </p>
 
         <input
@@ -64,7 +64,7 @@ export default function ClaimModal({ data, onClose, onConfirm }) {
           />
           <div className="anon-track" />
           <span className="anon-label">
-            Stay <strong>anonymous</strong> — Temmy won't know it's you 🤫
+            Stay <strong>anonymous</strong> — I won't know it's you 🤫
           </span>
         </label>
 

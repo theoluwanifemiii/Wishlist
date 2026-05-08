@@ -1,9 +1,16 @@
 import { useEffect, useRef } from 'react';
 
 const HERO_LINES = [
-  { text: 'Twenty-one. Unbothered. Deserving everything.', cls: 'quote', delay: 0.7 },
+  { text: 'Hi… 👀', cls: 'quote', delay: 0.7 },
+  { text: 'You didn\'t land here by accident.', cls: 'quote', delay: 0.9 },
+  { text: 'God brought you here for a reason.', cls: 'quote', delay: 1.1 },
   { cls: 'gap', delay: 0 },
-  { text: "Here's how you can be part of it.", cls: 'answer', delay: 1.15 },
+  { text: 'As I turn 21 (yes, my frontal lobe is fully developed now 😌),', cls: 'answer', delay: 1.3 },
+  { text: 'I\'ve carefully curated a wishlist, not too much, just the things I love, need and things that would genuinely make this the best birthday ever.', cls: 'answer', delay: 1.5 },
+  { cls: 'gap', delay: 0 },
+  { text: 'So if you\'ve ever wondered, "What can I get Temmy?"', cls: 'answer', delay: 1.7 },
+  { text: 'CONGRATULATIONS!', cls: 'quote', delay: 1.9 },
+  { text: 'Your question is about to be answered.', cls: 'answer', delay: 2.1 },
 ];
 
 const PETALS = ['🌸', '🌺', '✿', '❀', '🌷'];
@@ -47,7 +54,7 @@ export default function Hero() {
       <div className="hero-content">
         <div className="hero-badge">✦ &nbsp; Birthday Wishlist &nbsp; ✦</div>
         <h1 className="hero-name"><span>T</span>emilola</h1>
-        <p className="hero-subtitle">turns twenty-one ✦ 2026</p>
+        <p className="hero-subtitle">turns twenty-one</p>
 
         <div className="hero-divider">
           <div className="hero-divider-line" />

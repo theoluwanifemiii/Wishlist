@@ -2,12 +2,18 @@ export default function HeartSection() {
   return (
     <section className="heart-section">
       <blockquote className="heart-quote reveal">
-        "May your 21st be everything you've been quietly hoping for —
-        and then some."
+        If you made it this far… 🤍
+        <br />
+        I don't take your kindness lightly.
       </blockquote>
       <p className="heart-note reveal">
-        With love, from everyone who showed up here for{' '}
-        <em>Temilola</em> 🤍
+        Thank you for choosing to show up for me and celebrate my day. 🥹
+        <br /><br />
+        God bless you too much.
+        <br />
+        Now go forth and act accordingly 😌
+        <br /><br />
+        With love, <em>Temilola</em>
       </p>
     </section>
   );

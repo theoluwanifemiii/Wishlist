@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 
-const GOAL = 150_000;
+const GOAL = 400_000;
+const BASE_SAVINGS = 200_000;
 
 function formatNGN(n) {
   return '₦' + Number(n).toLocaleString('en-NG');
@@ -13,10 +14,11 @@ export default function LaptopFund({ laptopClaim, onContribute }) {
   // Build list of contributions from the single laptop claim record
   // (In a richer schema each contribution would be its own record — for now we show one)
   const contributions = laptopClaim ? [laptopClaim] : [];
-  const totalRaised = contributions.reduce((sum, c) => {
+  const contributionsTotal = contributions.reduce((sum, c) => {
     const amt = parseInt((c.amount || '').replace(/[^\d]/g, '')) || 0;
     return sum + amt;
   }, 0);
+  const totalRaised = BASE_SAVINGS + contributionsTotal;
   const pct = Math.min((totalRaised / GOAL) * 100, 100);
 
   useEffect(() => {
@@ -36,10 +38,10 @@ export default function LaptopFund({ laptopClaim, onContribute }) {
     <section className="laptop-section">
       <div className="laptop-card reveal visible">
         <span className="laptop-icon">💻</span>
-        <h2 className="laptop-title">Help Temmy Get Her Dream Laptop</h2>
+        <h2 className="laptop-title">Help me get my laptop.</h2>
         <p className="laptop-sub">
-          She's been grinding without the right tools. A proper laptop would genuinely change her life.
-          No amount is too small — every contribution counts and gets noted here 💛
+          I currently have ₦200,000 saved. I need ₦200,000 more to get the laptop I need for school, work and upskilling.
+          No amount is too small, every contribution counts and gets noted here 💛
         </p>
 
         <div className="progress-meta">

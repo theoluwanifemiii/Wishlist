@@ -7,6 +7,11 @@ export default function GiftCard({ gift, claimFor, onClaim }) {
 
   const [activeIdx, setActiveIdx] = useState(0);
 
+  // Resolve the shop link for the current option
+  const activeLink = hasImages
+    ? (gift.links?.[activeIdx] || '')
+    : (gift.link || '');
+
   const itemKey      = (i) => hasImages ? `${gift.item}-${i}` : gift.item;
   const variantClaims = hasImages
     ? gift.images.map((_, i) => claimFor(itemKey(i)))
@@ -93,6 +98,18 @@ export default function GiftCard({ gift, claimFor, onClaim }) {
           <button className="btn-claim" onClick={handleClaim}>
             {gift.btn}
           </button>
+        )}
+
+        {activeLink && !isClaimed && !activeClaimed && (
+          <a href={activeLink} target="_blank" rel="noopener noreferrer" className="gift-shop-link">
+            Shop this →
+          </a>
+        )}
+
+        {gift.whatsapp && !isClaimed && (
+          <a href={gift.whatsapp} target="_blank" rel="noopener noreferrer" className="gift-whatsapp-link">
+            💬 Reach out to my plug
+          </a>
         )}
       </div>
     </div>

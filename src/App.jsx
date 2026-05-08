@@ -19,39 +19,42 @@ import Toast from './components/Toast';
 export const GIFT_SECTIONS = [
   {
     id: 'style',
-    tag: 'Style & Soft Life',
-    title: 'Fashion Pieces I\'d Love 🎀',
+    tag: 'Vanities of Life',
+    title: 'Vanities of Life 🛍️',
     sub: 'A few stylish things that would make my heart very happy.',
     bg: 'bg-cream',
     gifts: [
-      { item: 'bag',       emoji: '👜', name: 'A Cute Bag',         image: '/gifts/bag.jpg',       note: 'Something stylish and chic 👀 Surprise me — I trust your taste completely!', btn: "🎁 I'll gift this" },
-      { item: 'heels',     emoji: '👠', name: 'Heels',              images: ['/gifts/heels-1.jpg', '/gifts/heels-2.jpg'],  note: 'Size 38 (sometimes 39, but let\'s be safe 😌). Beautiful and ideally walkable please!', btn: "🎁 I'll gift this" },
-      { item: 'sneakers',  emoji: '👟', name: 'Sneakers',           image: '/gifts/sneakers.jpg',  note: 'Size 38 please 🙏 Something clean and cute!', btn: "🎁 I'll gift this" },
-      { item: 'slippers',  emoji: '🩴', name: 'Slippers',           images: ['/gifts/slippers-1.jpg', '/gifts/slippers-2.jpg', '/gifts/slippers-3.jpg', '/gifts/slippers-4.jpg'],  note: 'Size 38 — browse the options and pick your favourite 🩴', btn: "🎁 I'll gift this" },
-      { item: 'dress',     emoji: '👗', name: 'A Beautiful Dress',  image: '/gifts/dress.jpg',     note: 'Size 8, preferably burgundy ❤️ A beautiful body hug dress would be dreamy.', btn: "🎁 I'll gift this" },
+      { item: 'bag',      emoji: '👜', name: 'A Cute Bag',        image: '/gifts/bag.jpg',  link: '', note: "Something stylish and chic 👀 Doesn't have to be this exact one — I trust your taste completely!", btn: "🎁 I'll gift this" },
+      { item: 'heels',    emoji: '👠', name: 'Heels',             images: ['/gifts/heels-1.jpg', '/gifts/heels-2.jpg'],  links: ['', ''],  note: "Size 39 — I don't have 'oke ese' please 😌 Beautiful and ideally walkable!", btn: "🎁 I'll gift this" },
+      { item: 'sneakers', emoji: '👟', name: 'Sneakers',          images: ['/gifts/sneakers-1.jpg', '/gifts/sneakers-2.jpg'],  links: ['', ''],  note: "Size 38 — I don't have oke-ese please 🙏 Please specify to your vendor, or reach out to my plug!", btn: "🎁 I'll gift this" },
+      { item: 'dress',    emoji: '👗', name: 'A Beautiful Dress', image: '/gifts/dress.jpg', link: '', note: "A beautiful body hug dress — size 8, specifically burgundy ❤️ Doesn't have to be this exact design.", btn: "🎁 I'll gift this" },
+      { item: 'jewelry',  emoji: '💍', name: 'Jewelleries',       image: '/gifts/Jewelleries.png', link: '', note: 'Necklaces, earrings, bracelets — anything dainty and feminine ✨ Gold tones preferred!', btn: "🎁 I'll gift this" },
     ],
   },
   {
     id: 'luxuries',
     tag: 'Little Luxuries',
-    title: 'Things That Make Life Beautiful ✨',
+    title: 'Little Luxuries I\'d Love ✨',
     sub: 'Small indulgences that would mean a lot.',
     bg: 'bg-white',
     gifts: [
-      { item: 'perfume', emoji: '🌹', name: 'Perfumes',          note: 'Very feminine — NOT flowery though. Something that smells truly great. Body oils, mist, the whole collection!', btn: "🎁 I'll gift this" },
-      { item: 'glasses', emoji: '👓', name: 'Cute Glass Frames', note: 'I\'m open to nice, stylish frames 👓 Surprise me with something that\'d look amazing!', btn: "🎁 I'll gift this" },
-      { item: 'mic',     emoji: '🎤', name: 'A Good Microphone', image: '/gifts/mic.jpg',       note: 'Content creator things 🎤 A quality mic for recording and content creation.', btn: "🎁 I'll gift this" },
+      { item: 'perfume',    emoji: '🌹', name: 'Perfumes',                    image: '/gifts/Perfumes.png', link: '', note: "Very feminine ones — I'm not a flowery girl. Just buy me something that smells really great. Body oils, mist, the whole perfume collection!", btn: "🎁 I'll gift this" },
+      { item: 'glasses',    emoji: '👓', name: 'Cute Glass Frames',           image: '/gifts/GlassFrames.png', link: '', note: "I'm open to nice, stylish frames 👓 Surprise me with something that'd look amazing!", btn: "🎁 I'll gift this" },
+      { item: 'sweatshirt', emoji: '👕', name: 'Sweatshirts & Customized Tees', image: '/gifts/Sweatshirts.png', link: '', note: "Cozy sweatshirts or customized tees — I'd genuinely wear these all the time 🤍", btn: "🎁 I'll gift this" },
+      { item: 'mic',        emoji: '🎤', name: 'A Good Microphone',           image: '/gifts/mic.jpg', link: '', note: "If I blow tomorrow through this content thing, you'd be part of my 'success story' — invest in me now while you still can 🎤", btn: "🎁 I'll gift this" },
     ],
   },
   {
     id: 'experiences',
     tag: 'Experiences',
-    title: 'Experiences > Things 🎉',
+    title: 'Things I\'d Love to Experience 🎉',
     sub: 'Because some memories are more precious than any gift.',
     bg: 'bg-blush',
-    single: true,
     gifts: [
-      { item: 'karaoke', emoji: '🎶', name: 'Karaoke Session', note: "Let's sing our lungs out together 😭🎵 This would genuinely make me so happy!", btn: "🎁 I'll make this happen" },
+      { item: 'karaoke', emoji: '🎶', name: 'A Karaoke Session',     image: '/gifts/Karaoke.png',    note: "I want to sing my heart out! This would genuinely make me so happy 😭🎵", btn: "🎁 I'll make this happen" },
+      { item: 'gallery', emoji: '🖼️', name: 'An Art Gallery',        image: '/gifts/ArtGallery.png', note: "Somewhere beautiful. Take 'ART' to see art! ✨", btn: "🎁 I'll make this happen" },
+      { item: 'beach',   emoji: '🏖️', name: 'The Beach',             image: '/gifts/Beach.png',      note: "Beach — no be river ooo 😅🌊", btn: "🎁 I'll make this happen" },
+      { item: 'wedding', emoji: '💒', name: 'Invite Me to a Wedding', image: '/gifts/Wedding.png',    note: "A proper owambe party, with plenty souvenirs. I don't want to fight for food, please 😭🎉", btn: "🎁 I'll make this happen" },
     ],
   },
 ];
@@ -103,7 +106,7 @@ export default function App() {
       day: '2-digit', month: 'short', hour: '2-digit', minute: '2-digit',
     });
     await createClaim({ item, name, gift: giftName, emoji, anon, timestamp, claimerEmail });
-    showToast(anon ? 'Claimed anonymously 🤍 Temmy will be surprised!' : `Claimed! 🎉 Temmy is going to love this.`);
+    showToast(anon ? 'Claimed anonymously 🤍 I\'ll be so surprised!' : `Claimed! 🎉 I'm going to love this.`);
   }, [createClaim, showToast]);
 
   // Submit a laptop contribution
@@ -117,7 +120,7 @@ export default function App() {
       gift: 'Laptop Fund Contribution', emoji: '💻',
       anon, timestamp, amount: amount || undefined, claimerEmail,
     });
-    showToast(anon ? 'Thank you 💛 Contribution noted!' : `Thank you, ${name}! 💛 Temmy will be so grateful.`);
+    showToast(anon ? 'Thank you 💛 Contribution noted!' : `Thank you, ${name}! 💛 I'm so grateful.`);
   }, [createClaim, showToast]);
 
   return (
@@ -139,12 +142,12 @@ export default function App() {
         />
       ))}
 
-      <MailSection />
       <MoneySection />
+      <MailSection />
       <HeartSection />
 
       <footer className="footer">
-        Made with 🤍 for <em>Temilola's 21st Birthday</em> &nbsp;✦&nbsp; Thank you for loving her
+        Made with 🤍 for <em>Temilola's 21st Birthday</em> &nbsp;✦&nbsp; Thank you for loving me
       </footer>
 
       {/* Modals */}

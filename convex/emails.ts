@@ -20,7 +20,7 @@ async function sendEmail(params: {
     method: "POST",
     headers: { Authorization: `Bearer ${key}`, "Content-Type": "application/json" },
     body: JSON.stringify({
-      from: `Olu (for Temmy) <${FROM}>`,
+      from: `Temilola <${FROM}>`,
       to: params.to,
       reply_to: params.replyTo ?? FROM,
       subject: params.subject,

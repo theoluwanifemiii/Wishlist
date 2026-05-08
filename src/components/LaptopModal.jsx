@@ -30,8 +30,8 @@ export default function LaptopModal({ open, onClose, onConfirm }) {
       <div className="modal-box">
         <h3 className="modal-title">Contribute to the Laptop Fund 💻</h3>
         <p className="modal-sub">
-          Any amount helps! Your name and contribution will be noted here so Temmy can see everyone
-          who showed up for her 💛
+          Any amount helps! Your name and contribution will be noted here so I can see everyone
+          who showed up for me 💛
         </p>
 
         <input
@@ -69,7 +69,7 @@ export default function LaptopModal({ open, onClose, onConfirm }) {
           />
           <div className="anon-track" />
           <span className="anon-label">
-            Stay <strong>anonymous</strong> — Temmy won't know it's you 🤫
+            Stay <strong>anonymous</strong> — I won't know it's you 🤫
           </span>
         </label>
 
