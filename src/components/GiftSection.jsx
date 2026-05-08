@@ -15,7 +15,7 @@ export default function GiftSection({ section, claimFor, onClaim }) {
             <GiftCard
               key={gift.item}
               gift={gift}
-              claim={claimFor(gift.item)}
+              claimFor={claimFor}
               onClaim={onClaim}
             />
           ))}

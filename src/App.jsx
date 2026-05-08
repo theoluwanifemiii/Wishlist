@@ -24,10 +24,11 @@ export const GIFT_SECTIONS = [
     sub: 'A few stylish things that would make my heart very happy.',
     bg: 'bg-cream',
     gifts: [
-      { item: 'bag',      emoji: '👜', name: 'A Cute Bag',         note: 'Something stylish and chic 👀 Surprise me — I trust your taste completely!', btn: "🎁 I'll gift this" },
-      { item: 'heels',    emoji: '👠', name: 'Heels',              note: 'Size 38 (sometimes 39, but let\'s be safe 😌). Beautiful and ideally walkable please!', btn: "🎁 I'll gift this" },
-      { item: 'sneakers', emoji: '👟', name: 'Sneakers',           note: 'Size 38 — flat soles please, no platforms 🙏 Tell your vendor specifically!', btn: "🎁 I'll gift this" },
-      { item: 'dress',    emoji: '👗', name: 'A Beautiful Dress',  note: 'Size 8, preferably burgundy ❤️ A beautiful body hug dress would be dreamy.', btn: "🎁 I'll gift this" },
+      { item: 'bag',       emoji: '👜', name: 'A Cute Bag',         image: '/gifts/bag.jpg',       note: 'Something stylish and chic 👀 Surprise me — I trust your taste completely!', btn: "🎁 I'll gift this" },
+      { item: 'heels',     emoji: '👠', name: 'Heels',              images: ['/gifts/heels-1.jpg', '/gifts/heels-2.jpg'],  note: 'Size 38 (sometimes 39, but let\'s be safe 😌). Beautiful and ideally walkable please!', btn: "🎁 I'll gift this" },
+      { item: 'sneakers',  emoji: '👟', name: 'Sneakers',           image: '/gifts/sneakers.jpg',  note: 'Size 38 please 🙏 Something clean and cute!', btn: "🎁 I'll gift this" },
+      { item: 'slippers',  emoji: '🩴', name: 'Slippers',           images: ['/gifts/slippers-1.jpg', '/gifts/slippers-2.jpg', '/gifts/slippers-3.jpg', '/gifts/slippers-4.jpg'],  note: 'Size 38 — browse the options and pick your favourite 🩴', btn: "🎁 I'll gift this" },
+      { item: 'dress',     emoji: '👗', name: 'A Beautiful Dress',  image: '/gifts/dress.jpg',     note: 'Size 8, preferably burgundy ❤️ A beautiful body hug dress would be dreamy.', btn: "🎁 I'll gift this" },
     ],
   },
   {
@@ -39,7 +40,7 @@ export const GIFT_SECTIONS = [
     gifts: [
       { item: 'perfume', emoji: '🌹', name: 'Perfumes',          note: 'Very feminine — NOT flowery though. Something that smells truly great. Body oils, mist, the whole collection!', btn: "🎁 I'll gift this" },
       { item: 'glasses', emoji: '👓', name: 'Cute Glass Frames', note: 'I\'m open to nice, stylish frames 👓 Surprise me with something that\'d look amazing!', btn: "🎁 I'll gift this" },
-      { item: 'mic',     emoji: '🎤', name: 'A Good Microphone', note: 'Content creator things 🎤 A quality mic for recording and content creation.', btn: "🎁 I'll gift this" },
+      { item: 'mic',     emoji: '🎤', name: 'A Good Microphone', image: '/gifts/mic.jpg',       note: 'Content creator things 🎤 A quality mic for recording and content creation.', btn: "🎁 I'll gift this" },
     ],
   },
   {

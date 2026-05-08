@@ -258,6 +258,7 @@ body {
   border-radius: 22px; padding: 2rem 1.8rem 1.8rem;
   position: relative; transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
   overflow: hidden;
+  display: flex; flex-direction: column;
 }
 .gift-card::before {
   content: ''; position: absolute; top: 0; left: 0;
@@ -269,7 +270,7 @@ body {
 .gift-card.is-claimed::before { background: linear-gradient(180deg, var(--gold), #A88040); }
 .gift-emoji { font-size: 2.2rem; margin-bottom: 1rem; display: block; }
 .gift-name { font-family: 'Cormorant Garamond', serif; font-size: 1.45rem; font-weight: 500; color: var(--crimson); margin-bottom: 0.5rem; line-height: 1.2; }
-.gift-note { font-size: 0.83rem; color: #9a9a9a; line-height: 1.7; margin-bottom: 1.5rem; }
+.gift-note { font-size: 0.83rem; color: #9a9a9a; line-height: 1.7; margin-bottom: 1.5rem; flex: 1; }
 .claimed-badge {
   display: inline-flex; align-items: center; gap: 0.4rem;
   background: linear-gradient(135deg, #fff5f5, #ffe8e8);
@@ -279,12 +280,93 @@ body {
 }
 .btn-claim {
   display: inline-flex; align-items: center; gap: 0.5rem;
+  align-self: flex-start;
   background: var(--crimson); color: white; border: none;
   padding: 0.75rem 1.7rem; border-radius: 50px;
   font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: 0.83rem;
   cursor: pointer; transition: all 0.3s ease;
 }
 .btn-claim:hover { background: var(--rose); transform: translateY(-1px); box-shadow: 0 6px 20px rgba(196,30,58,0.28); }
+
+/* Gift card with photo */
+.gift-card.has-image { padding: 0; overflow: hidden; }
+.gift-card.has-image::before { display: none; }
+.gift-image-wrap {
+  position: relative; width: 100%;
+  min-height: 280px;
+  background: #faf7f4;
+  border-radius: 22px 22px 0 0;
+  overflow: hidden;
+  display: flex; align-items: center; justify-content: center;
+}
+.gift-image {
+  width: 100%; height: 280px;
+  object-fit: contain; object-position: center;
+  display: block;
+  transition: transform 0.5s ease;
+}
+.gift-card.has-image:hover .gift-image { transform: scale(1.03); }
+.gift-image-overlay {
+  position: absolute; inset: 0;
+  background: rgba(139,0,0,0.55);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.1rem; font-weight: 600; color: white; letter-spacing: 0.05em;
+  backdrop-filter: blur(2px);
+}
+
+/* Multi-image picker — arrows */
+.img-arrow {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  background: rgba(255,255,255,0.88); border: none; border-radius: 50%;
+  width: 32px; height: 32px; font-size: 1.3rem; line-height: 1;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; color: var(--crimson); font-weight: 700;
+  transition: background 0.2s, transform 0.2s;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  z-index: 2;
+}
+.img-arrow:hover { background: white; transform: translateY(-50%) scale(1.08); }
+.img-arrow-left  { left: 10px; }
+.img-arrow-right { right: 10px; }
+
+/* Numbered option buttons bar */
+.image-picker-bar {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  display: flex; align-items: center; justify-content: center; gap: 6px;
+  padding: 10px 12px;
+  background: linear-gradient(to top, rgba(0,0,0,0.4), transparent);
+}
+.picker-num {
+  width: 28px; height: 28px; border-radius: 50%;
+  background: rgba(255,255,255,0.25); border: 1.5px solid rgba(255,255,255,0.4);
+  color: white; font-size: 0.72rem; font-weight: 600;
+  cursor: pointer; transition: all 0.2s ease;
+  display: flex; align-items: center; justify-content: center;
+}
+.picker-num:hover:not(.active):not(.claimed) {
+  background: rgba(255,255,255,0.45);
+}
+.picker-num.active {
+  background: white; color: var(--crimson); border-color: white;
+  transform: scale(1.15);
+}
+.picker-num.claimed {
+  background: var(--gold); border-color: var(--gold); color: white; opacity: 0.85;
+}
+.picker-num.claimed.active {
+  background: var(--gold-light); border-color: var(--gold-light); color: var(--crimson-deep);
+  transform: scale(1.15);
+}
+
+/* Selected option label */
+.option-selected-label {
+  font-size: 0.78rem; font-weight: 600;
+  color: var(--crimson); margin-bottom: 0.8rem;
+}
+/* non-image cards: card already has padding, body adds nothing */
+.gift-card-body { padding: 0; display: flex; flex-direction: column; flex: 1; }
+/* image cards: card has padding:0, so body provides all the padding */
+.gift-card.has-image .gift-card-body { padding: 1.4rem 1.8rem 1.8rem; }
 
 /* ─── SPECIAL SECTIONS ──────────────────────── */
 .special-card { border-radius: 28px; padding: 3.5rem; text-align: center; max-width: 580px; margin: 0 auto; }
