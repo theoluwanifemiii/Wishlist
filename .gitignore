@@ -9,8 +9,8 @@ dist/
 .env.local
 .env.*.local
 
-# Convex generated files (regenerated on deploy)
-convex/_generated/
+# Convex generated files — committed so Vercel can build without Convex CLI
+# convex/_generated/
 
 # OS
 .DS_Store
