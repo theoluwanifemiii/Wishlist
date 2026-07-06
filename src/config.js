@@ -63,11 +63,11 @@ export const CONFIG = {
       sub: 'Now that we are securing paid internships, the wardrobe must reflect the vision! 😌🔥',
       bg: 'bg-cream',
       gifts: [
-        { item: 'corporate-wear', emoji: '👔', name: 'Corporate Outfits',       link: '', note: 'Chic corporate gowns, sharp tailored pants, effortless two-piece sets — sleek, modern, and youthful. Size UK8 / Medium. Sponsor an outfit to help me stand out in the boardroom! 🤭🎁', btn: "🎁 I'll gift this" },
+        { item: 'corporate-wear', images: ['/gifts/corporate-1.png','/gifts/corporate-2.png','/gifts/corporate-3.png','/gifts/corporate-4.png','/gifts/corporate-5.png','/gifts/corporate-6.png'], emoji: '👔', name: 'Corporate Outfits', link: '', note: 'Chic corporate gowns, sharp tailored pants, effortless two-piece sets — sleek, modern, and youthful. Size UK8 / Medium. Sponsor an outfit to help me stand out in the boardroom! 🤭🎁', btn: "🎁 I'll gift this" },
         { item: 'cute-dress',     emoji: '👗', name: 'Cute Dresses',            link: '', note: 'Super cute, aesthetic dresses for dinners and casual hangouts. I am fully in my burgundy era 🍷 A gorgeous burgundy outfit would absolutely make my year! Size UK8 / Small.', btn: "🎁 I'll gift this" },
-        { item: 'crochet',        emoji: '🧶', name: 'Oversized Crochet Sweater', link: '', note: 'Chunky, oversized — the perfect piece for chilly lecture halls and rainy days ❤️ Vibe: Oversized, comfy, soft-girl aesthetic. Keep your favourite girl warm 😘', btn: "🎁 I'll gift this" },
-        { item: 'custom-shirt',   emoji: '🖤', name: 'Custom Black Shirt',      link: '', note: '"ABBA\'S BELOVED" — a meaningful, stylish statement piece. Classic, high-quality black shirt with this inscription. Size Medium (slightly oversized is a win!). Gift me this deeply personal reminder for my 20s! 🤭', btn: "🎁 I'll gift this" },
-        { item: 'hair-acc',       emoji: '🎀', name: 'Hair Accessories',        link: '', note: 'Cute scrunchies, aesthetic claw clips, and stylish hairpins to keep my hair flawless 🌸 A super sweet, low-stress option to add sparkle to my day!', btn: "🎁 I'll gift this" },
+        { item: 'crochet',        images: ['/gifts/crochet-1.png','/gifts/crochet-2.png','/gifts/crochet-3.png'], emoji: '🧶', name: 'Oversized Crochet Sweater', link: '', note: 'Chunky, oversized — the perfect piece for chilly lecture halls and rainy days ❤️ Vibe: Oversized, comfy, soft-girl aesthetic. Keep your favourite girl warm 😘', btn: "🎁 I'll gift this" },
+        { item: 'custom-shirt',   image: '/gifts/custom-shirt.jpg', emoji: '🖤', name: 'Custom Black Shirt', link: '', note: '"ABBA\'S BELOVED" — a meaningful, stylish statement piece. Classic, high-quality black shirt with this inscription. Size Medium (slightly oversized is a win!). Gift me this deeply personal reminder for my 20s! 🤭', btn: "🎁 I'll gift this" },
+        { item: 'hair-acc',       images: ['/gifts/hair-acc-1.png','/gifts/hair-acc-2.png','/gifts/hair-acc-3.png'], emoji: '🎀', name: 'Hair Accessories', link: '', note: 'Cute scrunchies, aesthetic claw clips, and stylish hairpins to keep my hair flawless 🌸 A super sweet, low-stress option to add sparkle to my day!', btn: "🎁 I'll gift this" },
       ],
     },
     {
@@ -90,7 +90,7 @@ export const CONFIG = {
       bg: 'bg-cream',
       gifts: [
         { item: 'watch',    emoji: '⌚', name: 'Wristwatch',         link: '', note: 'Sleek, classic, professional. A gorgeous watch that says "I manage finances and I\'m never late." 💼🕰️ Gift me a timeless piece!', btn: "🎁 I'll gift this" },
-        { item: 'jewelry',  emoji: '💍', name: 'Jewellery',          link: '', note: 'Dainty, aesthetic necklaces or bracelets — tarnish-free gold or silver preferred! Something I\'ll wear every single day 💃🏾', btn: "🎁 I'll gift this" },
+        { item: 'jewelry',  images: ['/gifts/jewelry-1.png','/gifts/jewelry-2.png'], emoji: '💍', name: 'Jewellery', link: '', note: 'Dainty, aesthetic necklaces or bracelets — tarnish-free gold or silver preferred! Something I\'ll wear every single day 💃🏾', btn: "🎁 I'll gift this" },
         { item: 'perfume',  emoji: '🌸', name: 'Perfumes & Deodorants', link: '', note: 'Smelling expensive is a top priority for my twenties! Warm vanillas, soft florals, or fresh clean scents 🍦 Multi-claim open — you can never have too many scents! 🎁', btn: "🎁 I'll gift this" },
       ],
     },
@@ -101,8 +101,8 @@ export const CONFIG = {
       sub: "The vision is incomplete without the gear! 😌✨",
       bg: 'bg-white',
       gifts: [
-        { item: 'tripod', emoji: '📷', name: 'Tripod',           link: '', note: 'A handy tripod for steady angles — whether I\'m vlogging my twenties or documenting my premium vibes, the setup must be right! 🔥 Shoutout guaranteed 😉', btn: "🎁 I'll gift this" },
-        { item: 'mic',    emoji: '🎙️', name: 'Content Mic',       link: '', note: 'A crisp content mic so my voice is crystal clear. Help me unlock my full viral potential! 🎁', btn: "🎁 I'll gift this" },
+        { item: 'tripod', image: '/gifts/tripod.jpg', emoji: '📷', name: 'Tripod',           link: '', note: 'A handy tripod for steady angles — whether I\'m vlogging my twenties or documenting my premium vibes, the setup must be right! 🔥 Shoutout guaranteed 😉', btn: "🎁 I'll gift this" },
+        { item: 'mic',    images: ['/gifts/mic.jpg','/gifts/mic-2.jpg'], emoji: '🎙️', name: 'Content Mic (Hollyland Lark M2)', link: '', note: 'A crisp wireless mic so my voice is crystal clear wherever I go. Help me unlock my full viral potential! 🎁', btn: "🎁 I'll gift this" },
       ],
     },
     {
