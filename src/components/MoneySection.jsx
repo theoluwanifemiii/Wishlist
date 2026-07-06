@@ -1,4 +1,7 @@
 import { useState } from 'react';
+import { CONFIG } from '../config';
+
+const { bank, money } = CONFIG;
 
 export default function MoneySection() {
   const [revealed, setRevealed] = useState(false);
@@ -15,11 +18,8 @@ export default function MoneySection() {
     <section className="section bg-white">
       <div className="section-inner">
         <div className="money-card reveal">
-          <h2 className="money-title">Money. Yes. Money. 💸</h2>
-          <p className="money-sub">
-            Any amount, no amount is too small in Tinubu's regime.
-            Your girl will appreciate it deeply 🏦
-          </p>
+          <h2 className="money-title">{money.title}</h2>
+          <p className="money-sub">{money.sub}</p>
 
           {!revealed ? (
             <button className="btn-red" onClick={() => setRevealed(true)}>
@@ -29,22 +29,16 @@ export default function MoneySection() {
             <div className="account-box">
               <div className="acct-row">
                 <div className="acct-label">Account Name</div>
-                <div className="acct-value">Temilola Priscilla</div>
-                <button
-                  className="copy-btn"
-                  onClick={() => copy('Temilola Priscilla', 'name')}
-                >
+                <div className="acct-value">{bank.accountName}</div>
+                <button className="copy-btn" onClick={() => copy(bank.accountName, 'name')}>
                   {copied === 'name' ? '✓ Copied' : 'Copy'}
                 </button>
               </div>
               <div className="acct-row">
                 <div className="acct-label">Account Number</div>
-                <div className="acct-value">8069703723</div>
-                <div className="acct-bank">OPay</div>
-                <button
-                  className="copy-btn"
-                  onClick={() => copy('8069703723', 'number')}
-                >
+                <div className="acct-value">{bank.accountNumber}</div>
+                <div className="acct-bank">{bank.bankName}</div>
+                <button className="copy-btn" onClick={() => copy(bank.accountNumber, 'number')}>
                   {copied === 'number' ? '✓ Copied' : 'Copy'}
                 </button>
               </div>
