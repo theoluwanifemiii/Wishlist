@@ -1,6 +1,9 @@
 import { useState } from 'react';
+import { CONFIG } from '../config';
 
-const ADMIN_PASSWORD = 'temmy21';
+const { person, fund } = CONFIG;
+
+const ADMIN_PASSWORD = 'ore20';
 
 export default function AdminPanel({ open, onClose, claims }) {
   const [authed, setAuthed] = useState(false);
@@ -24,16 +27,16 @@ export default function AdminPanel({ open, onClose, claims }) {
     onClose();
   };
 
-  // Separate laptop contributions from gift claims
-  const laptopClaims = claims.filter(c => c.item === 'laptop');
-  const giftClaims   = claims.filter(c => c.item !== 'laptop');
-  const anonCount    = claims.filter(c => c.anon).length;
+  // Separate fund contributions from gift claims
+  const fundClaims  = claims.filter(c => c.item === fund.itemKey);
+  const giftClaims  = claims.filter(c => c.item !== fund.itemKey);
+  const anonCount   = claims.filter(c => c.anon).length;
 
   return (
     <div className={`admin-overlay${open ? ' open' : ''}`}>
       <div className="admin-inner">
         <div className="admin-header">
-          <div className="admin-title">✦ Temmy's Dashboard</div>
+          <div className="admin-title">✦ {person.shortName}'s Dashboard</div>
           <button className="admin-close" onClick={handleClose}>✕</button>
         </div>
 
@@ -63,7 +66,7 @@ export default function AdminPanel({ open, onClose, claims }) {
                 <div className="stat-label">Gifts Claimed</div>
               </div>
               <div className="admin-stat">
-                <span className="stat-num">{laptopClaims.length}</span>
+                <span className="stat-num">{fundClaims.length}</span>
                 <div className="stat-label">Fund Contributions</div>
               </div>
               <div className="admin-stat">
@@ -92,17 +95,17 @@ export default function AdminPanel({ open, onClose, claims }) {
               ))
             )}
 
-            {/* Laptop contributions */}
-            <div className="admin-section-title">💻 Laptop Fund</div>
-            {laptopClaims.length === 0 ? (
+            {/* Fund contributions */}
+            <div className="admin-section-title">{fund.emoji} {fund.title}</div>
+            {fundClaims.length === 0 ? (
               <div className="empty-state">No contributions yet — spread the word! 💛</div>
             ) : (
-              laptopClaims.map((c) => (
+              fundClaims.map((c) => (
                 <div key={c._id} className="claim-row">
-                  <div className="claim-emoji-wrap">💻</div>
+                  <div className="claim-emoji-wrap">{fund.emoji}</div>
                   <div className="claim-info">
                     <div className="claim-gift-name">
-                      {c.amount ? c.amount : 'Contribution'} — Laptop Fund
+                      {c.amount ? c.amount : 'Contribution'} — {fund.emoji} Fund
                     </div>
                     <div className="claim-by">
                       from {c.anon ? 'Someone 🤍' : c.name}

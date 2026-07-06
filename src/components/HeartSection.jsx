@@ -1,3 +1,7 @@
+import { CONFIG } from '../config';
+
+const { person } = CONFIG;
+
 export default function HeartSection() {
   return (
     <section className="heart-section">
@@ -13,7 +17,7 @@ export default function HeartSection() {
         <br />
         Now go forth and act accordingly 😌
         <br /><br />
-        With love, <em>Temilola</em>
+        With love, <em>{person.name}</em>
       </p>
     </section>
   );

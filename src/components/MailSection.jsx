@@ -1,3 +1,12 @@
+import { CONFIG } from '../config';
+
+const { person, bank } = CONFIG;
+
+// Build mailto link dynamically
+const subject = encodeURIComponent(`Happy ${person.age}th Birthday, ${person.shortName}! 🎉`);
+const body = encodeURIComponent(`Hey ${person.shortName}!\n\n`);
+const mailtoHref = `mailto:${bank.accountName.split(' ')[0].toLowerCase()}@gmail.com?subject=${subject}&body=${body}`;
+
 export default function MailSection() {
   return (
     <section className="section bg-cream">
@@ -10,12 +19,12 @@ export default function MailSection() {
             That means just as much (if not more).
           </p>
           <a
-            href="mailto:temilolapriscilla@gmail.com?subject=Happy%2021st%20Birthday%2C%20Temmy!%20🎉&body=Hey%20Temmy!%0A%0A"
+            href={`mailto:oluwadarasimi919@gmail.com?subject=${subject}&body=${body}`}
             className="btn-red"
           >
             ✉️ Send me a message 😉
           </a>
-          <p className="email-label">Opens your email · temilolapriscilla@gmail.com</p>
+          <p className="email-label">Opens your email · oluwadarasimi919@gmail.com</p>
         </div>
       </div>
     </section>
