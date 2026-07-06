@@ -2,8 +2,8 @@ import { internalAction } from "./_generated/server";
 import { v } from "convex/values";
 
 const FROM   = "gifts@mail.usemomentos.xyz";
-const TEMMY  = "temilolapriscilla@gmail.com";
-const LAPTOP_GOAL = "₦150,000";
+const ORE    = "oluwadarasimi919@gmail.com";
+const FUND_GOAL = "₦550,000";
 
 // ── Resend helper ────────────────────────────────────────────────────
 async function sendEmail(params: {
@@ -20,7 +20,7 @@ async function sendEmail(params: {
     method: "POST",
     headers: { Authorization: `Bearer ${key}`, "Content-Type": "application/json" },
     body: JSON.stringify({
-      from: `Temilola <${FROM}>`,
+      from: `Oreoluwa <${FROM}>`,
       to: params.to,
       reply_to: params.replyTo ?? FROM,
       subject: params.subject,
@@ -73,7 +73,7 @@ function emailShell(body: string, footer: string) {
 <body>
   <div class="wrap">
     <div class="wordmark">
-      <p class="wordmark-title">Temilola's 21st</p>
+      <p class="wordmark-title">Oreoluwa's Big 20</p>
       <p class="wordmark-sub">✦ Birthday Wishlist</p>
     </div>
 
@@ -102,8 +102,8 @@ export const sendClaimEmails = internalAction({
     // ── Email to claimer ──────────────────────────────────────────────
     if (claimerEmail) {
       const subject = isLaptop
-        ? `You're in — Temmy's laptop fund 💛`
-        : `You're claiming ${gift} for Temmy 🎀`;
+        ? `You're in — Ore's iPhone fund 💛`
+        : `You're claiming ${gift} for Ore 🎀`;
 
       const giftPill = isLaptop
         ? `<span class="gift-pill"><span class="gift-emoji">💻</span>Laptop Fund Contribution</span>`
@@ -111,24 +111,24 @@ export const sendClaimEmails = internalAction({
 
       const bodyHtml = isLaptop
         ? `<p>Hey <span class="name">${claimerName}</span>,</p>
-           <p>Your contribution to Temmy's laptop fund has been noted. She's going to be so grateful when she sees this — you have no idea 💛</p>
+           <p>Your contribution to Ore's iPhone fund has been noted. She's going to be so grateful when she sees this — you have no idea 💛</p>
            ${giftPill}
-           <p>Her birthday is <strong>May 14th</strong>. You'll get a reminder a couple days before so it doesn't sneak up on you.</p>
+           <p>Her birthday is <strong>July 17th</strong>. You'll get a reminder a couple days before so it doesn't sneak up on you.</p>
            <p>Thank you for showing up for her 🤍</p>`
         : `<p>Hey <span class="name">${claimerName}</span>,</p>
-           <p>You just claimed a gift for Temmy's 21st birthday — she's going to absolutely love this.</p>
+           <p>You just claimed a gift for Ore's 20th birthday — she's going to absolutely love this.</p>
            ${giftPill}
-           <p>Her birthday is <strong>May 14th</strong>. You'll get a reminder a couple days before so it doesn't sneak up on you.</p>
+           <p>Her birthday is <strong>July 17th</strong>. You'll get a reminder a couple days before so it doesn't sneak up on you.</p>
            <p>Thank you for showing up for her 🤍</p>`;
 
       const bodyText = isLaptop
-        ? `Hey ${claimerName},\n\nYour contribution to Temmy's laptop fund has been noted. She's going to be so grateful.\n\nHer birthday is May 14th — you'll get a reminder before the date.\n\nThank you for showing up for her 🤍`
-        : `Hey ${claimerName},\n\nYou just claimed "${gift}" for Temmy's 21st birthday — she's going to love it.\n\nHer birthday is May 14th — you'll get a reminder before the date.\n\nThank you for showing up for her 🤍`;
+        ? `Hey ${claimerName},\n\nYour contribution to Ore's iPhone fund has been noted. She's going to be so grateful.\n\nHer birthday is July 17th — you'll get a reminder before the date.\n\nThank you for showing up for her 🤍`
+        : `Hey ${claimerName},\n\nYou just claimed "${gift}" for Temmy's 21st birthday — she's going to love it.\n\nHer birthday is July 17th — you'll get a reminder before the date.\n\nThank you for showing up for her 🤍`;
 
       await sendEmail({
         to: claimerEmail,
         subject,
-        html: emailShell(bodyHtml, `You're receiving this because you claimed a gift on Temmy's birthday wishlist. Questions? Reply to this email.`),
+        html: emailShell(bodyHtml, `You're receiving this because you claimed a gift on Ore's birthday wishlist. Questions? Reply to this email.`),
         text: bodyText,
       });
     }
@@ -139,29 +139,29 @@ export const sendClaimEmails = internalAction({
       : `<span class="name">${claimerName}</span>`;
 
     const temmySubject = isLaptop
-      ? `Someone just contributed to your laptop fund 💻`
-      : `${anon ? "Someone" : claimerName} just picked a gift for you 🎀`;
+      ? `Someone just contributed to your iPhone fund 📱`
+      : `${anon ? "Someone" : claimerName} just picked a gift for you 🎁`;
 
     const temmyGiftPill = isLaptop
       ? `<span class="gift-pill"><span class="gift-emoji">💻</span>Laptop Fund</span>`
       : `<span class="gift-pill"><span class="gift-emoji">${emoji}</span>${gift}</span>`;
 
     const temmyHtml = isLaptop
-      ? `<p>Hey Temmy,</p>
-         <p>${claimerDisplay} just contributed to your laptop fund. Things are actually coming together 💻</p>
+      ? `<p>Hey Ore,</p>
+         <p>${claimerDisplay} just contributed to your iPhone fund. Things are actually coming together 📱</p>
          ${temmyGiftPill}
          <p>Head to your wishlist dashboard to see everyone who's shown up for you so far 👑</p>`
-      : `<p>Hey Temmy,</p>
+      : `<p>Hey Ore,</p>
          <p>${claimerDisplay} just picked something from your birthday wishlist.</p>
          ${temmyGiftPill}
          <p>Head to your wishlist dashboard to see everything that's been claimed for you so far 👑</p>`;
 
     const temmyText = isLaptop
-      ? `Hey Temmy,\n\n${anon ? "Someone who loves you (staying anonymous)" : claimerName} just contributed to your laptop fund.\n\nCheck your wishlist dashboard to see who's showing up for you.`
-      : `Hey Temmy,\n\n${anon ? "Someone who loves you (staying anonymous)" : claimerName} just claimed "${gift}" from your birthday wishlist.\n\nCheck your wishlist dashboard to see everything claimed so far.`;
+      ? `Hey Ore,\n\n${anon ? "Someone who loves you (staying anonymous)" : claimerName} just contributed to your iPhone fund.\n\nCheck your wishlist dashboard to see who's showing up for you.`
+      : `Hey Ore,\n\n${anon ? "Someone who loves you (staying anonymous)" : claimerName} just claimed "${gift}" from your birthday wishlist.\n\nCheck your wishlist dashboard to see everything claimed so far.`;
 
     await sendEmail({
-      to: TEMMY,
+      to: ORE,
       subject: temmySubject,
       html: emailShell(temmyHtml, `This is your private wishlist notification. Only you receive these.`),
       text: temmyText,
@@ -182,7 +182,7 @@ export const sendReminder = internalAction({
   handler: async (_ctx, args) => {
     const { claimerEmail, claimerName, gift, emoji, isLaptop } = args;
 
-    const subject = `Temmy's birthday is in 2 days — just a heads up 🎂`;
+    const subject = `Ore's birthday is in 2 days — just a heads up 🎂`;
 
     const giftPill = isLaptop
       ? `<span class="gift-pill"><span class="gift-emoji">💻</span>Laptop Fund</span>`
@@ -190,24 +190,24 @@ export const sendReminder = internalAction({
 
     const bodyHtml = isLaptop
       ? `<p>Hey <span class="name">${claimerName}</span>,</p>
-         <p>Quick reminder — <strong>Temilola's 21st birthday is on May 14th</strong>, which is in 2 days.</p>
+         <p>Quick reminder — <strong>Oreoluwa's 20th birthday is on July 17th</strong>, which is in 2 days.</p>
          <p>You contributed to her laptop fund:</p>
          ${giftPill}
          <p>She's going to be so grateful. Thank you for being part of making this special for her 💛</p>`
       : `<p>Hey <span class="name">${claimerName}</span>,</p>
-         <p>Quick reminder — <strong>Temilola's 21st birthday is on May 14th</strong>, which is in 2 days.</p>
+         <p>Quick reminder — <strong>Oreoluwa's 20th birthday is on July 17th</strong>, which is in 2 days.</p>
          <p>You claimed this for her:</p>
          ${giftPill}
          <p>She's going to absolutely love it. Make sure you're ready 🎀</p>`;
 
     const bodyText = isLaptop
-      ? `Hey ${claimerName},\n\nQuick reminder — Temilola's 21st birthday is on May 14th, which is in 2 days.\n\nYou contributed to her laptop fund. She's going to be so grateful 💛`
-      : `Hey ${claimerName},\n\nQuick reminder — Temilola's 21st birthday is on May 14th, which is in 2 days.\n\nYou claimed "${gift}" for her. She's going to love it 🎀`;
+      ? `Hey ${claimerName},\n\nQuick reminder — Oreoluwa's 20th birthday is on July 17th, which is in 2 days.\n\nYou contributed to her laptop fund. She's going to be so grateful 💛`
+      : `Hey ${claimerName},\n\nQuick reminder — Oreoluwa's 20th birthday is on July 17th, which is in 2 days.\n\nYou claimed "${gift}" for her. She's going to love it 🎀`;
 
     await sendEmail({
       to: claimerEmail,
       subject,
-      html: emailShell(bodyHtml, `You're receiving this because you claimed a gift on Temmy's birthday wishlist. Questions? Reply to this email.`),
+      html: emailShell(bodyHtml, `You're receiving this because you claimed a gift on Ore's birthday wishlist. Questions? Reply to this email.`),
       text: bodyText,
     });
   },
